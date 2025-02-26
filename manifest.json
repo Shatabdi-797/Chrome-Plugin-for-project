@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "Image OCR Upload",
+    "version": "1.0",
+    "description": "Upload image for OCR processing and autofill form fields",
+    "permissions": [
+      "activeTab",
+      "storage"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "host_permissions": [
+      "http://*/*",
+      "https://*/*"
+    ]
+  }
+  
